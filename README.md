@@ -1,12 +1,4 @@
-# Isaac Gym Benchmark Environments
-
-[Website](https://developer.nvidia.com/isaac-gym) | [Technical Paper](https://arxiv.org/abs/2108.10470) | [Videos](https://sites.google.com/view/isaacgym-nvidia)
-
-
-### About this repository
-
-This repository contains example RL environments for the NVIDIA Isaac Gym high performance environments described [in our NeurIPS 2021 Datasets and Benchmarks paper](https://openreview.net/forum?id=fgFBtYgJQX_)
-
+paper link:https://ieeexplore.ieee.org/document/9872190 video link:https://youtu.be/NExPfxVkgCw
 
 ### Installation
 
@@ -37,7 +29,7 @@ Cartpole should train to the point that the pole stays upright within a few seco
 Here's another example - Ant locomotion:
 
 ```bash
-python train.py task=Ant
+python train.py task=A1
 ```
 
 Note that by default we show a preview window, which will usually slow down training. You 
@@ -64,7 +56,7 @@ defaults to the task name, but can also be overridden via the `experiment` argum
 To load a trained checkpoint and continue training, use the `checkpoint` argument:
 
 ```bash
-python train.py task=Ant checkpoint=runs/Ant/nn/Ant.pth
+python train.py task=Ant checkpoint=runs/A1/nn/A1.pth
 ```
 
 To load a trained checkpoint and only perform inference (no training), pass `test=True` 
@@ -77,7 +69,7 @@ python train.py task=Ant checkpoint=runs/Ant/nn/Ant.pth test=True num_envs=64
 
 Note that If there are special characters such as `[` or `=` in the checkpoint names, 
 you will need to escape them and put quotes around the string. For example,
-`checkpoint="./runs/Ant/nn/last_Antep\=501rew\[5981.31\].pth"`
+`checkpoint="./runs/A1/nn/last_A1ep\=501rew\[5981.31\].pth"`
 
 
 ### Configuration and command line arguments
@@ -87,7 +79,7 @@ differences from previous incarnations in older versions of Isaac Gym.
  
 Key arguments to the `train.py` script are:
 
-* `task=TASK` - selects which task to use. Any of `AllegroHand`, `Ant`, `Anymal`, `AnymalTerrain`, `BallBalance`, `Cartpole`, `FrankaCabinet`, `Humanoid`, `Ingenuity` `Quadcopter`, `ShadowHand`, `ShadowHandOpenAI_FF`, `ShadowHandOpenAI_LSTM`, and `Trifinger` (these correspond to the config for each environment in the folder `isaacgymenvs/config/task`)
+* `task=TASK` - selects which task to use. Any of `A1`, `AllegroHand`, `Ant`, `Anymal`, `AnymalTerrain`, `BallBalance`, `Cartpole`, `FrankaCabinet`, `Humanoid`, `Ingenuity` `Quadcopter`, `ShadowHand`, `ShadowHandOpenAI_FF`, `ShadowHandOpenAI_LSTM`, and `Trifinger` (these correspond to the config for each environment in the folder `isaacgymenvs/config/task`)
 * `train=TRAIN` - selects which training config to use. Will automatically default to the correct config for the environment (ie. `<TASK>PPO`).
 * `num_envs=NUM_ENVS` - selects the number of environments to use (overriding the default number of environments set in the task config).
 * `seed=SEED` - sets a seed value for randomizations, and overrides the default seed set up in the task config
@@ -140,34 +132,3 @@ Please review the Isaac Gym installation instructions first if you run into any 
 
 You can either submit issues through GitHub or through the [Isaac Gym forum here](https://forums.developer.nvidia.com/c/agx-autonomous-machines/isaac/isaac-gym/322).
 
-## Citing
-
-Please cite this work as:
-```
-@misc{makoviychuk2021isaac,
-      title={Isaac Gym: High Performance GPU-Based Physics Simulation For Robot Learning}, 
-      author={Viktor Makoviychuk and Lukasz Wawrzyniak and Yunrong Guo and Michelle Lu and Kier Storey and Miles Macklin and David Hoeller and Nikita Rudin and Arthur Allshire and Ankur Handa and Gavriel State},
-      year={2021},
-      journal={arXiv preprint arXiv:2108.10470}
-}
-```
-
-**Note** if you use the ANYmal rough terrain environment in your work, please ensure you cite the following work:
-```
-@misc{rudin2021learning,
-      title={Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning}, 
-      author={Nikita Rudin and David Hoeller and Philipp Reist and Marco Hutter},
-      year={2021},
-      journal = {arXiv preprint arXiv:2109.11978}
-}
-```
-
-If you use the Trifinger environment in your work, please ensure you cite the following work:
-```
-@misc{isaacgym-trifinger,
-  title     = {{Transferring Dexterous Manipulation from GPU Simulation to a Remote Real-World TriFinger}},
-  author    = {Allshire, Arthur and Mittal, Mayank and Lodaya, Varun and Makoviychuk, Viktor and Makoviichuk, Denys and Widmaier, Felix and Wuthrich, Manuel and Bauer, Stefan and Handa, Ankur and Garg, Animesh},
-  year      = {2021},
-  journal = {arXiv preprint arXiv:2108.09779}
-}
-```
