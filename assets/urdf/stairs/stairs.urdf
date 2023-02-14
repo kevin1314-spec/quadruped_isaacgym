@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<robot name="stairs">
+    <material name="Grey">
+      <color rgba="0.6 0.6 0.6 1.0"/>
+    </material>
+    <link name="stairs_1">
+      <visual>
+        <origin rpy="0 -0 1.5708" xyz="-0.375 -0 0.09"/>
+        <geometry>
+          <box size ="2 0.25 0.18"/>
+        </geometry>
+        <material name="Grey"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size ="2 0.25 0.18"/>
+        </geometry>
+        <origin rpy="0 -0 1.5708" xyz="-0.375 -0 0.09"/>
+      </collision>
+    </link>
+    <link name="stairs_2">
+      <visual>
+        <origin rpy="0 -0 1.5708" xyz="-0.125 -0 0.27"/>
+        <geometry>
+          <box size ="2 0.25 0.18"/>
+        </geometry>
+        <material name="Grey"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size ="2 0.25 0.18"/>
+        </geometry>
+        <origin rpy="0 -0 1.5708" xyz="-0.125 -0 0.27"/>
+      </collision>
+    </link>
+    <link name="stairs_3">
+      <visual>
+        <origin rpy="0 -0 1.5708" xyz="0.125 0 0.45"/>
+        <geometry>
+          <box size ="2 0.25 0.18"/>
+        </geometry>
+        <material name="Grey">
+      </visual>
+      <collision>
+        <geometry>
+          <box size ="2 0.25 0.18"/>
+        </geometry>
+        <origin rpy="0 -0 1.5708" xyz="0.125 0 0.45"/>
+      </collision>
+    </link>
+    <link name="stairs_4">
+      <visual>
+        <origin rpy="0 -0 1.5708" xyz="0.375 0 0.63"/>
+        <geometry>
+          <box size ="2 0.25 0.18"/>
+        </geometry>
+        <material name="Grey"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size ="2 0.25 0.18"/>
+        </geometry>
+        <origin rpy="0 -0 1.5708" xyz="0.375 0 0.63"/>
+      </collision>
+    </link>
+    <static>1</static>
+</robot>
